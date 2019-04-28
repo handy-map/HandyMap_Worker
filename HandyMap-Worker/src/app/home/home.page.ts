@@ -7,7 +7,8 @@ import { Job } from '../models/job.model';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss']
 })
-export class HomePage {
+export class HomePage{
+
   constructor(private dataGenerator: DataGeneratorService) {
   }
 

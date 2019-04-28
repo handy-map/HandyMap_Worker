@@ -18,13 +18,28 @@ export class DataGeneratorService implements OnInit {
   ['Electrician', 'Plumber'], ['Electrician', 'Plumber']]
   ratings: number[] = [3.4, 4.3, 4.8, 4.9, 5.0, 3.5, 3.5, 4.75];
 
-  jobs: Job[] = [];
+  jobs: Job[] = [
+    {
+      jobName: 'Tile Bathroom',
+      clientName: 'John Blue',
+      description: 'Tile Bathrrom walls and floor',
+      startDateTime: new Date('2019-12-17T12:30:00'),
+      endDateTime: new Date('2019-12-17T17:30:00'),
+      address: '5 road name'
+    },
+    {
+      jobName: 'Paint Lounge',
+      clientName: 'Sam Brown',
+      description: 'Paint walls and ceiling of lounge',
+      startDateTime: new Date('2019-12-18T08:15:00'),
+      endDateTime: new Date('2019-12-18T16:00:00'),
+      address: '7 somewhere place'
+    }
+  ];
 
   workers: IWorker[] = [];
-  
-  ngOnInit(): void {
-     
-  }
+
+  ngOnInit(): void {}
 
 
   constructor() {

@@ -7,14 +7,14 @@
 <ion-content padding>
   <ion-card>
     <ion-card-content>
-      <ion-segment>
+      <!-- <ion-segment>
         <ion-segment-button [routerLink]="['/']" checked="false">
           <ion-label>Login</ion-label>
         </ion-segment-button>
         <ion-segment-button checked>
           <ion-label>Sign Up</ion-label>
         </ion-segment-button>
-      </ion-segment>
+      </ion-segment> -->
       <form #fields="ngForm" (ngSubmit)="onSubmit(fields)">
         <ion-list>
           <ion-item>
@@ -50,6 +50,7 @@
         </ion-list>
         <ion-button type="submit" color="primary" expand="full" [disabled]="!fields.valid" (click)="onSignUp()">Sign Up</ion-button>
       </form>
+      <ion-button [routerLink]="['/']" expand="full" fill="clear">Log In</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
