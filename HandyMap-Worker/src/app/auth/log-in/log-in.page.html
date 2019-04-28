@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>LogIn</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card id="form-card">
+    <ion-card-content>
+      <ion-segment>
+        <ion-segment-button checked>
+          <ion-label>Login</ion-label>
+        </ion-segment-button>
+        <ion-segment-button [routerLink]="['/sign-up']" checked="false">
+          <ion-label>Sign Up</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      <form #fields="ngForm" (ngSubmit)="login(fields)" id="login">
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Email Address</ion-label>
+              <ion-input type="email" ngModel name="email" required email></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input type="password" ngModel name="password" required minlength="6"></ion-input>
+            </ion-item>
+          </ion-list>
+          <ion-button type="submit" color="primary" expand="full">Login</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

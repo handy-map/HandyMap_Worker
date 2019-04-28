@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-segment>
+        <ion-segment-button [routerLink]="['/']" checked="false">
+          <ion-label>Login</ion-label>
+        </ion-segment-button>
+        <ion-segment-button checked>
+          <ion-label>Sign Up</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      <form #fields="ngForm" (ngSubmit)="onSubmit(fields)">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input type="text" ngModel name="name" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Surname</ion-label>
+            <ion-input type="text" ngModel name="surname" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Email Address</ion-label>
+            <ion-input type="email" ngModel name="email" required email></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Contact Number</ion-label>
+            <ion-input type="tel" ngModel name="phone" required pattern="0[1-9]{2}[0-9]{3}[0-9]{4}"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Skill(s)</ion-label>
+            <ion-select multiple="true" cancelText="Cancel" okText="OK" name="skills" [(ngModel)]="skills" (ionChange)="catSelected($event)">
+              <ion-select-option *ngFor="let cat of getCategories()" value="{{cat}}">{{cat}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" ngModel name="password" required minlength="6" [(ngModel)]="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Confirm Password</ion-label>
+            <ion-input type="password" ngModel name="password" required minlength="6" pattern="{{password}}"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button type="submit" color="primary" expand="full" [disabled]="!fields.valid" (click)="onSignUp()">Sign Up</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
