@@ -47,7 +47,6 @@ export class SignUpPage implements OnInit {
 
     const jsonObject = JSON.stringify(worker);
     console.log('Sending Request body: ' + jsonObject);
-
   }
 
   onSignUp() {

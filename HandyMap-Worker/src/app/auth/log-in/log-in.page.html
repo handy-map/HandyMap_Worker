@@ -15,7 +15,7 @@
           <ion-label>Sign Up</ion-label>
         </ion-segment-button>
       </ion-segment>
-      <form #fields="ngForm" (ngSubmit)="login(fields)" id="login">
+      <form #fields="ngForm" (ngSubmit)="onSubmit(fields)" id="login">
           <ion-list>
             <ion-item>
               <ion-label position="floating">Email Address</ion-label>
@@ -26,7 +26,7 @@
               <ion-input type="password" ngModel name="password" required minlength="6"></ion-input>
             </ion-item>
           </ion-list>
-          <ion-button type="submit" color="primary" expand="full">Login</ion-button>
+          <ion-button type="submit" color="primary" expand="full" (click)="onLogin()">Login</ion-button>
       </form>
     </ion-card-content>
   </ion-card>

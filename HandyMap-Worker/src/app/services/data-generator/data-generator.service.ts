@@ -1,5 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { IWorker } from 'src/app/models/worker.model';
+import { Job } from 'src/app/models/job.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,9 @@ export class DataGeneratorService implements OnInit {
   ['Electrician', 'Plumber'], ['Electrician', 'Plumber'], ['Electrician', 'Plumber'],
   ['Electrician', 'Plumber'], ['Electrician', 'Plumber']]
   ratings: number[] = [3.4, 4.3, 4.8, 4.9, 5.0, 3.5, 3.5, 4.75];
+
+  jobs: Job[] = [];
+
   workers: IWorker[] = [];
   
   ngOnInit(): void {
