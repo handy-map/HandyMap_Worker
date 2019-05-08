@@ -16,15 +16,16 @@ export class HomePage{
     return this.dataGenerator.jobs;
   }
 
-  accept(job: Job) {
+  accept(jobId: number) {
+    // Make service call to accept a job
+    console.log('Accepted');
+  }
+
+  reschedule(jobId: number) {
 
   }
 
-  reschedule(job: Job) {
-
-  }
-
-  decline(job: Job) {
-
+  decline(jobId: number) {
+    console.log('Declined');
   }
 }

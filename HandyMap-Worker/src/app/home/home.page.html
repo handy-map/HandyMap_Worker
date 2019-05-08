@@ -9,30 +9,35 @@
 <ion-content>
     <ion-list>
       <!-- Sliding item with text options on both sides -->
+      
       <ion-item-sliding *ngFor="let job of this.getJobs()">
-
-        <ion-item-options side="start">
-          <ion-item-option (click)="accept(job)">Accept</ion-item-option>
-          <ion-item-option color="danger" (click)="reschedule(job)">Reschedule</ion-item-option>
-        </ion-item-options>
-        
+      
         <ion-card>
-          <ion-card-header>
-            <ion-card-title>{{job.jobName}}</ion-card-title>
-            <ion-card-subtitle>{{job.clientName}}</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-text><strong>{{job.description}}</strong></ion-text>
-            <br>
-            <ion-text>{{job.startDateTime.toLocaleDateString()}},{{job.startDateTime.toLocaleTimeString()}}-{{job.endDateTime.toLocaleTimeString()}}</ion-text>
-            <br>
-            <ion-text>{{job.address}}</ion-text>
-          </ion-card-content>
+  
+          <ion-item-options side="start">
+            <ion-item-option (click)="accept(job.jobId)" color="success">Accept</ion-item-option>
+            <!-- <ion-item-option color="danger" (click)="reschedule(job.jobId)" color="primary">Reschedule</ion-item-option> -->
+          </ion-item-options>
+          <ion-item>
+            <ion-card-header>
+              <ion-card-title>{{job.jobName}}</ion-card-title>
+              <ion-card-subtitle>{{job.clientName}}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-text><strong>{{job.description}}</strong></ion-text>
+              <br>
+              <ion-text>{{job.startDateTime.toLocaleDateString()}},{{job.startDateTime.toLocaleTimeString()}}-{{job.endDateTime.toLocaleTimeString()}}</ion-text>
+              <br>
+              <ion-text>{{job.address}}</ion-text>
+            </ion-card-content>
+          </ion-item>
+         
+          <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="decline(job.jobId)"><ion-icon name="close"></ion-icon>Decline</ion-item-option>
+          </ion-item-options>
+        
         </ion-card>
         
-        <ion-item-options side="end">
-          <ion-item-option (click)="decline(job)"><ion-icon name="close" color="red"></ion-icon>Decline</ion-item-option>
-        </ion-item-options>
       </ion-item-sliding>
     </ion-list>
   </ion-content>
