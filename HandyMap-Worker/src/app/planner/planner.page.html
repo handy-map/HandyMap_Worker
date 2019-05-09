@@ -17,7 +17,9 @@
         <ion-card-content>
           <ion-text><strong>{{job.description}}</strong></ion-text>
           <br>
-          <ion-text>{{job.startDateTime.toLocaleDateString()}},{{job.startDateTime.toLocaleTimeString()}}-{{job.endDateTime.toLocaleTimeString()}}</ion-text>
+          <ion-text>{{job.startDateTime.toLocaleDateString()}}</ion-text>
+          <br/>
+          <ion-text>{{job.startDateTime.toLocaleTimeString()}} - {{job.endDateTime.toLocaleTimeString()}}</ion-text>
           <br>
           <ion-text>{{job.address}}</ion-text>
         </ion-card-content>
