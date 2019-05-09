@@ -20,6 +20,7 @@ export class DataGeneratorService implements OnInit {
 
   jobs: Job[] = [
     {
+      jobId: 1,
       jobName: 'Tile Bathroom',
       clientName: 'John Blue',
       description: 'Tile Bathrrom walls and floor',
@@ -28,6 +29,7 @@ export class DataGeneratorService implements OnInit {
       address: '5 road name'
     },
     {
+      jobId: 2,
       jobName: 'Paint Lounge',
       clientName: 'Sam Brown',
       description: 'Paint walls and ceiling of lounge',
