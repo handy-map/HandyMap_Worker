@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DataGeneratorService } from '../services/data-generator/data-generator.service';
 import { Job } from '../models/job.model';
-import {Common} from "../services/data-generator/common";
+
 
 @Component({
   selector: 'app-home',
