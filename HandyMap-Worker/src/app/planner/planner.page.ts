@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {DataGeneratorService} from '../services/data-generator/data-generator.service';
 
 @Component({
   selector: 'app-planner',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['planner.page.scss']
 })
 
-export class PlannerPage {}
+export class PlannerPage {
+  constructor(private dataGenerator: DataGeneratorService) {}
+  getMyJobs() {
+    return DataGeneratorService.myjobs;
+  }
+}

@@ -39,6 +39,17 @@ export class DataGeneratorService implements OnInit {
     }
   ];
 
+  static myjobs: Job[]=[
+    {
+      jobId: 1,
+      jobName: 'Tile Bathroom',
+      clientName: 'John Blue',
+      description: 'Tile Bathrrom walls and floor',
+      startDateTime: new Date('2019-12-17T12:30:00'),
+      endDateTime: new Date('2019-12-17T17:30:00'),
+      address: '5 road name'
+    }
+  ];
   workers: IWorker[] = [];
 
   ngOnInit(): void {}
